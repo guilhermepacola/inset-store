@@ -6,7 +6,7 @@ function Footer(){
                 <p>
                     @2025 E-Commerce Solutions. All rights reserved
                 </p>
-                <img src="/public/payment-footer.png" alt="" className={`w-3xs object-cover`}   />
+                <img src="./payment-footer.png" alt="" className={`w-3xs object-cover`}   />
             </Container>
         </footer>
     )
