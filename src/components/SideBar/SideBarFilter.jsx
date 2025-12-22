@@ -3,10 +3,7 @@ import Filters from './Filters'
 
 export function SideBarFilter({ filters, onChange }) {
   return (
-   <aside className='w-full lg:w-60 h-full bg-white border-r flex flex-col'>
-      
-     
-
+   <aside className='w-full lg:w-40 h-full bg-white border-none flex flex-col'>
       <div className=" overflow-y-auto p-4 custom-scrollbar">
         <Filters 
           filters={filters}
@@ -15,7 +12,7 @@ export function SideBarFilter({ filters, onChange }) {
       </div>
 
       {/* Rodapé da sidebar para mobile */}
-      <div className="p-4 border-t lg:hidden">
+      <div className="p-4 border-none lg:hidden">
         <p className="text-[10px] text-gray-400 text-center">
           Role para ver todas as opções
         </p>
