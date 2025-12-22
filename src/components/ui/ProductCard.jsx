@@ -28,7 +28,6 @@ export function ProductCard({ item }) {
       currency: 'BRL'
     }).format(value);
   };
-  console.log(item)
   return (
 
     <div
