@@ -1,4 +1,3 @@
-import React from 'react'
 import Filters from './Filters'
 
 export function SideBarFilter({ filters, onChange }) {
