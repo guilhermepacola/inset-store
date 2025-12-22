@@ -41,7 +41,7 @@ function Header({ onSearch }) {
     };
     return (
         <div className="w-full">
-            <div className="max-w-8xl sm:mx-auto lg:mx-52 h-20 flex items-center justify-between px-4 lg:px-0">
+            <div className="max-w-8xl sm:mx-auto lg:mx-32 h-20 flex items-center justify-between px-4 lg:px-0">
                 <Link to={"/"}> <img src="./header-logo.png" alt="Logo inset Store" className={`py-2 w-44 cursor-pointer`} /></Link>
 
                 {/*Barra de Pesquisa*/}
