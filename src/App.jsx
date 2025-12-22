@@ -24,7 +24,7 @@ function App() {
   }
   return (
     <main className='flex h-full overflow-hidden'>
-      <aside className=" w-full lg:w-40 h-full custom-scrollbar">
+      <aside className=" w-full lg:w-60 h-full custom-scrollbar">
         <SideBarFilter filters={filters} onChange={handleFilterChange} />
       </aside>
 
