@@ -31,41 +31,48 @@ export function ProductCard({ item }) {
   console.log(item)
   return (
 
-    <div onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)} className="bg-white border border-gray-100 rounded-xl p-3 shadow-sm hover:shadow-md transition-all group flex flex-col h-full max-w-48">
-
-      <div className="bg-gray-50 rounded-lg overflow-hidden h-32 flex items-center justify-center p-2 relative">
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="bg-white border border-gray-100 rounded-xl p-2 md:p-3 shadow-sm hover:shadow-md transition-all group flex flex-col h-full w-full"
+    >
+      {/* Container da Imagem: aspect-square mantém a proporção sempre correta */}
+      <div className="bg-gray-50 rounded-lg overflow-hidden aspect-square flex items-center justify-center p-2 relative">
         <img
           src={images && isHovered ? images[currentImageIndex] : thumbnail}
           alt={title}
-          className="max-h-full object-contain group-hover:scale-105 transition-transform"
+          className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform"
         />
 
-        <div className="absolute text-xs top-2 right-1 bg-white/90 px-1
-         py-0.5 rounded-lg flex items-center gap-1 shadow-sm">
-          <FiStar className='text-amber-500 text-xs' /> {rating}
+        {/* Rating Badge: Um pouco maior no desktop */}
+        <div className="absolute text-[10px] md:text-xs top-2 right-2 bg-white/90 px-1.5 py-0.5 rounded-lg flex items-center gap-1 shadow-sm font-medium">
+          <FiStar className='text-amber-500' /> {rating}
         </div>
       </div>
 
-      {/* Informaçoes do produtos */}
-      <div className="mt-3 flex flex-col grow">
-        <span className="text-[7px] uppercase font-bold text-violet-400 leading-none mb-1.5">
+      {/* Informações do produto */}
+      <div className="mt-2 md:mt-3 flex flex-col grow">
+        <span className="text-[9px] md:text-[10px] uppercase font-bold text-violet-400 leading-none mb-1 md:mb-1.5">
           {category}
         </span>
 
-        <h3 className="text-xs font-semibold text-gray-800 line-clamp-2 trun leading-tight min-h-5">
+        {/* Título: Ajuste de min-height para manter o alinhamento no grid */}
+        <h3 className="text-xs md:text-sm font-semibold text-gray-800 line-clamp-2 leading-tight min-h-[2.5rem] md:min-h-[3rem]">
           {title}
         </h3>
 
-        <div className=" pt-1 flex justify-between items-center">
-          <span className="text-sm font-bold leading-none  text-gray-900">{formatCurrency(price)}</span>
-          <button className=" text-sm flex gap-1 items-center cursor-pointer bg-violet-100 text-violet-600 p-1 rounded-lg hover:bg-violet-600 hover:text-white transition-colors">Comprar
+        <div className="mt-auto pt-2 flex flex-col sm:flex-row gap-2 justify-between sm:items-center">
+          <span className="text-[8px] md:text-sm font-bold text-gray-900 leading-none">
+            {formatCurrency(price)}
+          </span>
 
+          <button className="w-full sm:w-auto text-[10px] md:text-xs font-bold flex justify-center items-center gap-1 cursor-pointer bg-violet-100 text-violet-600 px-2 py-1.5 rounded-lg hover:bg-violet-600 hover:text-white transition-colors">
+            Comprar
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default ProductCard;

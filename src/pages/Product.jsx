@@ -6,7 +6,7 @@ import ProductCard from "../components/ui/ProductCard";
 function Product({ currentFilters, searchValue = "" }) {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    
+
     // Estados para o Scroll Infinito
     const [visibleCount, setVisibleCount] = useState(10);
     const [isFetchingMore, setIsFetchingMore] = useState(false);
@@ -76,36 +76,39 @@ function Product({ currentFilters, searchValue = "" }) {
 
     return (
         <Container>
-            <h2 className="text-2xl font-bold mb-6">Nossos Produtos</h2>
+            <h2 className="text-xl md:text-2xl font-bold mb-6 px-2 md:px-0">
+                Nossos Produtos
+            </h2>
 
             {loading ? (
-                <div className="flex justify-center py-10">
+                <div className="flex justify-center py-20">
                     <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-violet-600"></div>
                 </div>
             ) : displayProducts.length > 0 ? (
                 <>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 px-2 md:px-0">
                         {displayProducts.map((item) => (
                             <ProductCard key={item.id} item={item} />
                         ))}
                     </div>
 
-
                     <div ref={observerTarget} className="flex flex-col items-center py-10 w-full min-h-[100px]">
                         {isFetchingMore && (
                             <div className="flex flex-col items-center gap-2">
                                 <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-violet-600"></div>
-                                <p className="text-sm text-gray-500">Carregando mais...</p>
+                                <p className="text-xs md:text-sm text-gray-500">Carregando mais...</p>
                             </div>
                         )}
 
                         {visibleCount >= filteredProducts.length && (
-                            <p className="text-gray-400 italic text-sm">Você chegou ao fim da lista.</p>
+                            <p className="text-gray-400 italic text-xs md:text-sm text-center">
+                                Você chegou ao fim da lista.
+                            </p>
                         )}
                     </div>
                 </>
             ) : (
-                <p className="text-gray-500 italic text-center py-10">
+                <p className="text-gray-500 italic text-center py-20 px-4">
                     Nenhum produto encontrado para os filtros selecionados.
                 </p>
             )}
