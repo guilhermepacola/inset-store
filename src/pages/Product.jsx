@@ -8,7 +8,7 @@ function Product({ currentFilters, searchValue = "" }) {
     const [loading, setLoading] = useState(true);
     
     // Estados para o Scroll Infinito
-    const [visibleCount, setVisibleCount] = useState(12);
+    const [visibleCount, setVisibleCount] = useState(10);
     const [isFetchingMore, setIsFetchingMore] = useState(false);
     const observerTarget = useRef(null);
 
@@ -49,7 +49,7 @@ function Product({ currentFilters, searchValue = "" }) {
         if (isFetchingMore || visibleCount >= filteredProducts.length) return;
         setIsFetchingMore(true);
         setTimeout(() => {
-            setVisibleCount(prev => prev + 10);
+            setVisibleCount(prev => prev + 5);
             setIsFetchingMore(false);
         }, 600);
     };
@@ -71,7 +71,7 @@ function Product({ currentFilters, searchValue = "" }) {
 
     // Reseta a contagem quando o filtro mudar
     useEffect(() => {
-        setVisibleCount(12);
+        setVisibleCount(10);
     }, [currentFilters, searchValue]);
 
     return (

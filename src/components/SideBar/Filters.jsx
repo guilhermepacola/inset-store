@@ -67,7 +67,7 @@ function Filters({ filters, onChange }) {
     
       <div>
         <h3 className="font-bold mb-3 text-gray-700">Categorias</h3>
-        <div className="flex flex-col gap-2 max-h-60 overflow-y-auto pr-2">
+        <div className="flex flex-col gap-2 max-h-60 custom-scrollbar overflow-y-auto pr-2">
           {categoryList.map((category) => (
             <div key={category} className="flex items-center gap-2"> 
               <input

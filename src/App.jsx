@@ -23,13 +23,18 @@ function App() {
     }));
   }
   return (
-    <main className='flex'>
-      <SideBarFilter
-        filters={filters}
-        onChange={handleFilterChange} />
-      <Container>
-        <Product currentFilters={filters} searchValue={searchValue} />
-      </Container>
+    <main className='flex h-full overflow-hidden'>
+    <aside className="w-64 h-full custom-scrollbar ">
+        <SideBarFilter
+          filters={filters}
+          onChange={handleFilterChange} 
+        />
+      </aside>
+     <section className='flex-1 overflow-y-auto custom-scrollbar bg-gray-50'>
+        <Container>
+          <Product currentFilters={filters} searchValue={searchValue} />
+        </Container>
+      </section>
     </main>
   )
 }
