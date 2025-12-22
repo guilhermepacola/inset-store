@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+
+/* 1. Cores e Tamanho Global */
+:root {
+  --swiper-navigation-color: #7c3aed; /* Cor Violeta */
+  --swiper-navigation-size: 18px;     /* Tamanho da seta interna */
+}
+
+/* 2. Estilização do Botão (Círculo) */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  transition: all 0.3s ease;
+  top: 50%; /* Centraliza verticalmente */
+}
+
+/* 3. Efeito de Hover (Passar o mouse) */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #7c3aed;
+  --swiper-navigation-color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* 4. Ajuste da Seta Interna (Deixa ela centralizada e negrito) */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-weight: bold;
+}
+
+/* 5. Ajuste de Posição para não tapar o conteúdo */
+.swiper-button-prev {
+  left: 5px !important;
+}
+
+.swiper-button-next {
+  right: 5px !important;
+}
+
+/* 6. Espaçamento no Container do Swiper */
+/* Isso garante que os cards não encostem nas setas nas pontas */
+.swiper {
+  padding: 10px 15px 40px 15px !important;
+}
+
+/* 7. Esconder setas em telas muito pequenas (opcional) */
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important; /* No mobile é melhor usar o touch */
+  }
+}
