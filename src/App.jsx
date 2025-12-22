@@ -24,14 +24,14 @@ function App() {
   }
   return (
     <main className='flex h-full overflow-hidden'>
-      <aside className=" sm:w-40 lg:w-60 h-full custom-scrollbar">
+      <aside className=" sm:w-40 lg:w-80 h-full custom-scrollbar">
         <SideBarFilter filters={filters} onChange={handleFilterChange} />
       </aside>
 
       <section className='flex-1 overflow-y-auto custom-scrollbar bg-gray-50 flex flex-col'>
 
         <div className="flex-1">
-          <Container>
+          <Container className={'sm:mx-auto lg:mx-32'}>
             <Product currentFilters={filters} searchValue={searchValue} />
           </Container>
         </div>        

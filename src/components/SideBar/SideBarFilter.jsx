@@ -2,7 +2,7 @@ import Filters from './Filters'
 
 export function SideBarFilter({ filters, onChange }) {
   return (
-   <aside className='w-full sm:w-40 lg:w-60 h-full bg-white border-none flex flex-col'>
+   <aside className='w-full sm:w-40 lg:w-76 h-full bg-white border-none flex flex-col'>
       <div className=" overflow-y-auto p-4 custom-scrollbar">
         <Filters 
           filters={filters}
