@@ -35,7 +35,6 @@ export function ProductCard({ item }) {
       onMouseLeave={() => setIsHovered(false)}
       className="bg-white border border-gray-100 rounded-xl p-2 md:p-3 shadow-sm hover:shadow-md transition-all group flex flex-col h-full w-full"
     >
-      {/* Container da Imagem: aspect-square mantém a proporção sempre correta */}
       <div className="bg-gray-50 rounded-lg overflow-hidden aspect-square flex items-center justify-center p-2 relative">
         <img
           src={images && isHovered ? images[currentImageIndex] : thumbnail}
@@ -43,7 +42,7 @@ export function ProductCard({ item }) {
           className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform"
         />
 
-        {/* Rating Badge: Um pouco maior no desktop */}
+        
         <div className="absolute text-[10px] md:text-xs top-2 right-2 bg-white/90 px-1.5 py-0.5 rounded-lg flex items-center gap-1 shadow-sm font-medium">
           <FiStar className='text-amber-500' /> {rating}
         </div>

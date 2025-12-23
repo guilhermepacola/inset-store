@@ -68,11 +68,15 @@ npm run dev
 Ou se desejar ver o deploy, siga o link :
 https://inset-store.vercel.app/
 
-# Web-Desktop View
-![Texto Alternativo](./public/readme-desktop-1.jpeg)
-![Texto Alternativo](./public/readme-desktop-2.jpeg)
+# 🖥️ Visualização Desktop
+<p align="center">
+  <img src="./public/readme-desktop-1.png" width="45%" />
+  <img src="./public/readme-desktop-2.png" width="45%" />
+</p>
 
-# Mobile-View
-![Texto Alternativo](./public/readme-mobile-1.jpeg)
-![Texto Alternativo](./public/readme-mobile-2.jpeg)
-![Texto Alternativo](./public/readme-mobile-3.jpeg)
+# 📱 Visualização Mobile
+<p align="center">
+  <img src="./public/readme-mobile-1.jpeg" width="30%" />
+  <img src="./public/readme-mobile-2.jpeg" width="30%" />
+  <img src="./public/readme-mobile-3.jpeg" width="30%" />
+</p>
