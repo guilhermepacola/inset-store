@@ -27,7 +27,7 @@ function Product({ currentFilters, searchValue = "" }) {
         getInitialProducts();
     }, []);
 
-    // 1. Filtragem e Ordenação da lista única
+    //Filtragem e Ordenação da lista única
     const filteredProducts = products.filter(product => {
         const matchesCategory = currentFilters.categories.length === 0 ||
             currentFilters.categories.includes(product.category);
@@ -41,10 +41,10 @@ function Product({ currentFilters, searchValue = "" }) {
         return a.title.localeCompare(b.title);
     });
 
-    // 2. Paginação sobre a lista filtrada
+    //Paginação sobre a lista filtrada
     const displayProducts = filteredProducts.slice(0, visibleCount);
 
-    // 3. Função para carregar mais itens
+    //Função para carregar mais itens
     const handleLoadMore = () => {
         if (isFetchingMore || visibleCount >= filteredProducts.length) return;
         setIsFetchingMore(true);
@@ -54,7 +54,7 @@ function Product({ currentFilters, searchValue = "" }) {
         }, 600);
     };
 
-    // 4. Observer para Scroll Infinito
+    //Observer para Scroll Infinito
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -69,7 +69,7 @@ function Product({ currentFilters, searchValue = "" }) {
         return () => observer.disconnect();
     }, [isFetchingMore, visibleCount, filteredProducts.length]);
 
-    // Reseta a contagem quando o filtro mudar
+    //Reseta a contagem quando o filtro mudar
     useEffect(() => {
         setVisibleCount(10);
     }, [currentFilters, searchValue]);
