@@ -41,39 +41,41 @@ function Header({ onSearch }) {
     };
     return (
         <div className="w-full">
-            <div className="max-w-8xl sm:mx-auto lg:mx-32 h-20 flex items-center justify-between px-4 lg:px-0">
-                <Link to={"/"}> <img src="./header-logo.png" alt="Logo inset Store" className={`py-2 w-44 cursor-pointer`} /></Link>
+            <div className="max-w-395 sm:mx-auto lg:mx-32 h-20 flex items-center justify-between p-2 md:px-4 lg:px-0">
+                <Link to={"/"}> <img src="./header-logo.png" alt="Logo inset Store" className={`w-30 md:w-44 cursor-pointer`} /></Link>
 
                 {/*Barra de Pesquisa*/}
-                <div className={`hidden md:inline-flex max-w-3xl w-full relative`}>
+                <div className={` md:inline-flex sm:min-w-20 lg:w-5xl relative`}>
                     <input type="text"
                         onChange={(inputValue) => handleSearch(inputValue)}
                         onKeyDown={handleKeyDown}
                         value={searchText}
 
-                        className={`w-full flex-1 text-violet-500 rounded-full 
+                        className={`lg:w-full sm:w-40 flex-1 text-violet-500 rounded-full 
                          placeholder:text-base placeholder:tracking-wide placeholder:text-violet-300
                          shadow-sm ring-2 ring-inset ring-violet-400
                          outline-none focus:text-violet-600 focus:ring-violet-600 focus:ring-2
-                         px-3 py-1 cursor-pointer`} placeholder="Pesquisar um Produto..." />
-
-                    {searchText ? (
-                        <IoClose onClick={clearSearch}
-                            className={`absolute top-1.5 right-2 text-xl text-violet-500 hover:text-red-300 cursor-pointer duration-200`} />) :
-                        (<IoSearchOutline onClick={handleTriggerSearch} className={` cursor-pointer absolute top-1.5 right-2 text-xl text-violet-400 `} />)}
+                         px-3 py-1 cursor-pointer`} placeholder="Pesquisar um Produto" />
+                    <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center">
+                        {searchText ? (
+                            <IoClose onClick={clearSearch}
+                                className={`text-xl text-violet-500 hover:text-red-300 cursor-pointer duration-200`} />) :
+                            (<IoSearchOutline onClick={handleTriggerSearch} className={` cursor-pointer text-xl text-violet-400 `} />)}
+                    </div>
                 </div>
 
                 {/*Menubar */}
-                <div className="flex items-center gap-x-6 text-2xl px-5">
-                    <FiUser className={`text-violet-400 hover:text-violet-600 duration-200 cursor-pointer`} />
-                    <div className="relative block">
+                <div className="flex items-center gap-2 md:gap-6 text-xl md:text-2xl ">
+                    <FiUser className={` text-violet-400 hover:text-violet-600 duration-200 cursor-pointer`} />
+                    <div className="relative cursor-pointer">
                         <FiStar className={`text-violet-400 hover:text-violet-600 duration-200 cursor-pointer`} />
                         <span className={`inline-flex items-center justify-center 
                         bg-red-500 text-amber-100 
                         absolute -bottom-1 -right-1
                         text-[9px] rounded-full w-3 h-3`}>0</span>
                     </div>
-                    <div className="relative block">
+
+                    <div className="relative cursor-pointer">
                         <FiShoppingBag className={`text-violet-400 hover:text-violet-600 duration-200 cursor-pointer`} />
                         <span className={`inline-flex items-center justify-center 
                         bg-red-500 text-amber-100 
@@ -86,11 +88,9 @@ function Header({ onSearch }) {
             {/*Barra de Navegação */}
             <div className="w-full bg-violet-400 text-white">
                 <Container className={`py-2 max-w-5xl flex items-center justify-between gap-2  `}>
-                    <button className="flex items-baseline gap-1 font-semibold cursor-pointer">Selecionar Categoria <FaChevronDown className="text-[10px]" /></button>
-
                     {
                         bottomNavigation.map(({ title }) => (
-                            <Link key={title} className={`hidden md:inline-flex text-sm font-semibold 
+                            <Link key={title} className={` md:inline-flex text-base font-semibold 
                             cursor-pointer overflow-hidden group hover:text-white duration-200 relative `}>
 
                                 {title}

@@ -86,13 +86,13 @@ function Product({ currentFilters, searchValue = "" }) {
                 </div>
             ) : displayProducts.length > 0 ? (
                 <>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 px-2 md:px-0">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6 px-2 md:px-0">
                         {displayProducts.map((item) => (
                             <ProductCard key={item.id} item={item} />
                         ))}
                     </div>
 
-                    <div ref={observerTarget} className="flex flex-col items-center py-10 w-full min-h-[100px]">
+                    <div ref={observerTarget} className="flex flex-col items-center py-10 w-full min-h-25">
                         {isFetchingMore && (
                             <div className="flex flex-col items-center gap-2">
                                 <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-violet-600"></div>

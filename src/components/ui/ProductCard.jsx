@@ -55,13 +55,12 @@ export function ProductCard({ item }) {
           {category}
         </span>
 
-        {/* Título: Ajuste de min-height para manter o alinhamento no grid */}
-        <h3 className="text-xs md:text-sm font-semibold text-gray-800 line-clamp-2 leading-tight min-h-[2.5rem] md:min-h-[3rem]">
+            <h3 className="text-xs md:text-sm font-semibold text-gray-800 line-clamp-2 leading-tight min-h-10 md:min-h-12">
           {title}
         </h3>
 
         <div className="mt-auto pt-2 flex flex-col sm:flex-row gap-2 justify-between sm:items-center">
-          <span className="text-[8px] md:text-sm font-bold text-gray-900 leading-none">
+          <span className="text-base font-bold text-gray-900 leading-none">
             {formatCurrency(price)}
           </span>
 
