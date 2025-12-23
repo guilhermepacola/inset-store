@@ -2,7 +2,7 @@ import Container from "../Container/Container"
 function Footer(){
     return(
         <footer className="bg-gray-50 ">
-            <Container className={`flex flex-col md:flex-row items-center gap-4 justify-evenly mb-5 `}>
+            <Container className={`flex flex-col md:flex-row items-center gap-4 justify-evenly sm:mb-10 md:mb-0 `}>
                 <p>
                     @2025 E-Commerce Solutions. All rights reserved
                 </p>
