@@ -9,6 +9,8 @@ Funcionalidades
 - **Responsividade Mobile-First**:
   - **Desktop**: Sidebar de filtros fixa e grid expandido.
   - **Mobile**: Menu de filtros em estilo *Drawer* (gaveta) e barra de busca otimizada para telas pequenas.
+- **Pesquisa**:
+  - SearchBar interativa, alterando vitrine conforme busca de produtos.
 - **Sistema de Filtros**: 
   - Filtragem por múltiplas categorias simultâneas.
   - Controle de preço máximo via *range slider*.
