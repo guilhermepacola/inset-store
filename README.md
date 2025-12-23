@@ -37,7 +37,7 @@ Funcionalidades
 | **Primária** | `violet-600` | `#7C3AED` | ![#7C3AED](https://img.shields.io/static/v1?label=&message=%20&color=7C3AED&style=flat) | Botões e Destaques |
 | **Secundária** | `violet-400` | `#A78BFA` | ![#A78BFA](https://img.shields.io/static/v1?label=&message=%20&color=A78BFA&style=flat) | Ícones e Links |
 | **Background** | `gray-50` | `#F9FAFB` | ![#F9FAFB](https://img.shields.io/static/v1?label=&message=%20&color=F9FAFB&style=flat) | Fundo das seções |
-| **Botão close SearchBar** | `red-500` | `#EF4444` | ![#EF4444](https://img.shields.io/static/v1?label=&message=%20&color=EF4444&style=flat) | Alertas e Contadores |
+| **Botão close SearchBar** | `red-500` | `#EF4444` | ![#EF4444](https://img.shields.io/static/v1?label=&message=%20&color=EF4444&style=flat) | Botão SearchBar |
 | **Linhas/Bordas**| `gray-200` | `#E5E7EB` | ![#E5E7EB](https://img.shields.io/static/v1?label=&message=%20&color=E5E7EB&style=flat) | Divisores e Bordas |
 
 ---
